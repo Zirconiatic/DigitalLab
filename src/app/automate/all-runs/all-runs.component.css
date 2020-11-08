@@ -1,0 +1,14 @@
+.cust-table {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+.cust-img{
+    width: 35px;
+    height: 35px;
+}
+.cust-img:hover{
+    width: 30px;
+    height: 30px;
+}

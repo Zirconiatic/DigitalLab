@@ -1,0 +1,26 @@
+<div class="container cust-create-run">
+    <div class="alert alert-success cust-alert" *ngIf="submitmessage">
+        <strong>{{message}}</strong>
+    </div>
+    <form class="form-inline" #runForm=ngForm (ngSubmit)="handleSubmit()">
+        <label>Device UDID :</label>&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" class="form-control col-lg-10" placeholder="Enter Device Udid" #udidcontrol="ngModel"
+            [(ngModel)]="udidName" name="run-name" required><br /><br /><br />
+        <br />
+        <label>Application Source :</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" class="form-check-input" name="optradio" #optioncontrol="ngModel" [(ngModel)]="optradio"
+            value="Local System" (change)="handleAdditionalFields()">Local
+        System
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" class="form-check-input" name="optradio" #optioncontrol="ngModel" [(ngModel)]="optradio"
+            value="Git" (change)="handleAdditionalFields()">Git
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" class="form-control col-lg-2" placeholder="Enter Local Path" *ngIf="!showAdditionalFields"/>
+        &nbsp;&nbsp;&nbsp;
+        <input type="text" class="form-control col-lg-2" placeholder="Enter Git Path" *ngIf="showAdditionalFields"/>
+        &nbsp;&nbsp;&nbsp;
+        <input type="text" class="form-control col-lg-2" placeholder="Enter Git Auth Token" *ngIf="showAdditionalFields"/>
+        <button type="submit" class="btn btn-primary cust-submit" value="Submit"
+            [disabled]="runForm.invalid">Submit</button>
+    </form>
+</div>

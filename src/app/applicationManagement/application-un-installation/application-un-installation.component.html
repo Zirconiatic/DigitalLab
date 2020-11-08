@@ -1,0 +1,19 @@
+<div class="container cust-uninstall">
+    <div class="alert alert-success cust-alert" *ngIf="submitmessage">
+        <strong>{{message}}</strong>
+    </div>
+    <form #appuninstallForm=ngForm (ngSubmit)="handleSubmit()">
+        <div class="form-inline">
+            <label>Enter device UDID : </label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" class="form-control col-lg-6" placeholder="Enter udid and click outside the text box" (blur)="showSelect()" [(ngModel)]="udid" name="udid" required/>
+        </div>
+        <br />
+        <div class="form-inline" *ngIf="showApplicationList">
+            <label>Select App to Uninstall : </label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <select class="form-control" name="installedApplication" [(ngModel)]="selectedApplication"> 
+                <option *ngFor="let application of installedApplicationList; let i = index" [value]="application">{{application}}</option> 
+            </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" class="btn btn-primary" [disabled]="appuninstallForm.invalid" value="Submit"/>
+        </div>
+    </form>
+</div>

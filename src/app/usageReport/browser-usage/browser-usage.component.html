@@ -1,0 +1,23 @@
+<div class="container cust-div" align="center">
+    <form class="form-inline cust-form">
+        <input type="button" class="btn btn-success" value="Today">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" class="btn btn-success" value="Last Week">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="date" class="form-control" [(ngModel)]="fromdate" name="fromdate"/>&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="date" class="form-control" [(ngModel)]="todate" name="todate" (change)="intervalData()"/>
+    </form>
+    <ngx-charts-bar-vertical
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="browserusage"
+    [gradient]="gradient"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [barPadding]="padding"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    (select)="onSelect($event)">
+  </ngx-charts-bar-vertical>
+</div>

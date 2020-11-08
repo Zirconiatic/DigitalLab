@@ -1,0 +1,25 @@
+<div class="container cust-create-run">
+    <div class="alert alert-success cust-alert" *ngIf="submitmessage">
+        <strong>{{message}}</strong>
+    </div>
+    <form class="form-inline" #runForm=ngForm (ngSubmit)="handleSubmit()">
+        <label>Run Name :</label>&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" class="form-control col-lg-10" placeholder="Enter Run Name" #usernamecontrol="ngModel" [(ngModel)]="runName" name="run-name" required><br /><br /><br />
+        <label>Choose File :</label>&nbsp;&nbsp;&nbsp;
+        <div class="custom-file col-lg-10">
+            <input type="file" class="custom-file-input" id="customFile" (change)="onChangeFileSelect($event)" #filecontrol="ngModel" name="file-name" required ngModel>
+            <label class="custom-file-label">{{fileName}}</label>
+        </div>
+        <br/><br/><br/>
+        <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="optradio" #optioncontrol="ngModel" [(ngModel)]="optradio" value="Save and Run" (change)="handleDateTime(false)" checked>Save and Run
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="radio" class="form-check-input" name="optradio" #optioncontrol="ngModel" [(ngModel)]="optradio" value="Schedule and Run" (change)="handleDateTime(true)">Schedule and Run
+              <input type="time" class="form-control cust-time" *ngIf="viewDateTime" [(ngModel)]="time" name="time"/>
+              <input type="date" class="form-control cust-date" *ngIf="viewDateTime" [(ngModel)]="date" name="date"/>
+              <button type="submit" class="btn btn-primary cust-submit" value="Submit" [disabled]="runForm.invalid">Submit</button>
+            </label>
+          </div>
+    </form>
+</div>

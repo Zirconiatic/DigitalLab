@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-sm navbar-light cust-nav-top" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="#">
+        <img src="../assets/Digital-Lab-Logo-3.png" class="brand-logo" />
+    </a>
+    <ul class="navbar-nav w-100">
+        <li class="nav-item dropdown ml-auto" *ngIf="has.isUserLoggedIn()">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                <img src="../assets/account-icon.png" class="cust-account-icon"/>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">Help</a>
+                <a class="dropdown-item" routerLink="/logout">Logout</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+<!-- carolina blue was used -->
+<nav class="navbar navbar-expand-sm navbar-light cust-nav-top" style="background-color:#99badd;" *ngIf="has.isUserLoggedIn()">
+
+    <!-- Links -->
+    <ul class="navbar-nav cust-nav-item">
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/dashboard', username]" >Dashboard</a>
+        </li>
+
+        <li class="nav-item dropdown cust-nav-item">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Labs
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" routerLink="/devicelab">Device Lab</a>
+                <a class="dropdown-item" routerLink="/browserlab">Browser Lab</a>
+            </div>
+        </li>
+        
+        <li class="nav-item dropdown cust-nav-item">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Automate
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" routerLink="/allruns">All Runs</a>
+                <a class="dropdown-item" routerLink="/create/newrun">Create New Run</a>
+            </div>
+        </li>
+
+        <!-- <li class="nav-item dropdown cust-nav-item">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Mobile Performance
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Execute Test</a>
+                <a class="dropdown-item" href="#">Create Test</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown cust-nav-item">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Bring Your Pipeline
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Search Pipeline</a>
+                <a class="dropdown-item" href="#">Registration</a>
+            </div>
+        </li> -->
+
+        <li class="nav-item dropdown cust-nav-item">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Application Management
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" routerLink="/application/installation">Application Installation</a>
+                <a class="dropdown-item" routerLink="/application/uninstallation">Application Uninstallation</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown cust-nav-item">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Usage Report
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" routerLink="/deviceusage">Device Usage</a>
+                <a class="dropdown-item" routerLink="/browserusage">Browser Usage</a>
+                <a class="dropdown-item" routerLink="/userusage">User Usage</a>
+            </div>
+        </li>
+    </ul>
+</nav>

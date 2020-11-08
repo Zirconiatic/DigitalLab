@@ -1,0 +1,20 @@
+.cust-table {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.cust-img{
+    height: 40px;
+    width: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cust-popup{
+    position: absolute;
+    top: 150px;
+    left: 350px;
+    width: 460px;
+}

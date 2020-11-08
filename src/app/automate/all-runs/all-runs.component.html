@@ -1,0 +1,27 @@
+<div class="container">
+    <table class="table table-hover cust-table">
+        <thead>
+            <tr>
+                <th>Run Name</th>
+                <th>Last Build</th>
+                <th>Last Build Status</th>
+                <th>Trigger</th>
+                <th>Report</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let run of allruns">
+                <td>{{run.runname}}</td>
+                <td>{{run.lastbuild}}</td>
+                <td *ngIf="!run.state">{{run.lastbuildstatus}}</td>
+                <td *ngIf="run.state">
+                    <div class="spinner-border text-secondary" role="status">
+                    <span class="sr-only">Loading...</span>
+                    </div>
+                </td>
+                <td><img src="../../assets/play-button.png" (click)="handleTrigger(run)" class="cust-img"></td>
+                <td><img src="../../assets/report-download.png" (click)="handleReport(run)" class="cust-img"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

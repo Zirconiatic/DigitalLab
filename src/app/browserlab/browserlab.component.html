@@ -1,0 +1,45 @@
+<div>
+    <table class="table table-hover cust-table">
+        <thead>
+            <tr>
+                <th>Browser</th>
+                <th>Browser Version</th>
+                <th>Availability</th>
+                <th>Capabilities</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let browser of browsers">
+                <td><img src="../../assets/{{browser.name}}.png" class="cust-img"></td>
+                <td>{{browser.browserVersion}}</td>
+                <td>{{browser.availability}}</td>
+                <td>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-success" (click)="openPopup(browser)">
+                        Get Capabilities
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="container cust-popup" *ngIf="show">
+        <div id="closeablecard" class="card card-hover-shadow mt-4">
+            <div class="card-header bg-transparent border-bottom-0">
+                <button type="button" class="close" (click)="hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="card-body mt-n5">
+                <h5 class="card-title">Browser Capabilities</h5>
+                <p class="card-text">
+                    <b>url:</b>{{tempUrl}}<br/>
+                    <b>browserName:</b>{{tempName}}<br/>
+                    <b>platform:</b>{{tempPlatform}}<br/>
+                    <b>id:</b>{{tempId}}<br/>
+                </p>
+                <small><b>{{tempComment}}</b></small>
+            </div>
+        </div>
+    </div>
+
+</div>

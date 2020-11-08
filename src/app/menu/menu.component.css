@@ -1,0 +1,23 @@
+.cust-nav-top{
+    padding: 0px;
+}
+
+.brand-logo{
+    height: 45px;
+}
+
+.cust-nav-item{
+    margin-left: 100px;
+}
+
+.cust-help-icon{
+    height: 40px;
+}
+
+.cust-account-icon{
+    height: 30x;
+}
+
+.cust-nav-drop{
+    float: right;
+}
