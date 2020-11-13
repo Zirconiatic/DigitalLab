@@ -24,7 +24,9 @@ export class LoginComponent implements OnInit {
     if (this.has.authenticate(this.username,this.password)) {
       console.log("Success")
       this.invalidLogin = false
-      this.router.navigate(['dashboard',this.username])
+      //this page is under construction
+      //this.router.navigate(['dashboard',this.username])
+      this.router.navigate(['devicelab'])
     }
     else {
       console.log("invalid")

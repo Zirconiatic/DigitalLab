@@ -20,7 +20,7 @@ export class AllRunsComponent implements OnInit {
 
   ngOnInit(): void {
     //polling started
-    this.polling = setInterval(() => this.handleTimeout(), 60000);
+    this.polling = setInterval(() => this.handleTimeout(), 30000);
   }
 
   ngOnDestroy() {
